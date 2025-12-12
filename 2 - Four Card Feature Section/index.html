@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    *{
+      margin:0;
+      padding:0;
+      text-decoration:none;
+      border:none;
+    }
+    :root{
+      font-size:15px;
+      --red-primary:hsl(0, 78%, 62%);
+      --cyan-primary:hsl(180, 62%, 55%);
+      --orange-primary:hsl(34, 97%, 64%);
+      --blue-primary:hsl(212, 86%, 64%);
+
+      --grey-500:hsl(234, 12%, 34%);
+      --grey-400:hsl(212, 6%, 44%);
+      --white:hsl(0, 0%, 100%);
+      
+      --ff-main: "Poppins", sans-serif;
+
+      --fw-light:200;
+      --fw-regular:400;
+      --fw-bold:600;
+      max-width:100vw;
+    }
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body {
+      background-color:var(--white)
+    }
+
+/*************************** CONTAINER & HEADING  ***************************/
+
+  div.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  div.heading {
+    margin:3rem 0;
+  }
+
+
+
+
+/*************************** TITLE & SUBTITLE  ***************************/
+
+    div.title{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin:1rem 0;
+    }
+
+    div.title > h1 {
+      font-family:var(--ff-main);
+      font-size:2rem;
+      color:var(--grey-500);
+    }
+    div.heading > div.title > h1.light {
+      font-weight:var(--fw-light)
+    }
+    div.heading > div.title > h1.bold {
+      font-weight:var(--fw-bold)
+    }
+
+    div.subtitle {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div.subtitle > h2{
+      font-family:var(--ff-main);
+      font-weight:var(--fw-regular);
+      font-size:0.8rem;
+      color:var(--grey-500);
+      text-align: center;
+      width: 80%;
+    }
+
+/*************************** CARDS  ***************************/
+
+div.cards{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.card-section-2 {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.card {
+  display:flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction:column;
+  width:20rem;
+  height:15rem;
+  margin:1.5rem 0;
+  padding:0.5rem 1rem;
+  background-color:var(--white);
+  box-shadow: 0 0.3rem 1.5rem var(--grey-400);
+  border-top: 0.3rem solid;
+  border-radius:0.35rem;
+}
+
+
+div.card.card-cyan{border-color:var(--cyan-primary)}
+div.card.card-red{border-color:var(--red-primary)}
+div.card.card-orange{border-color:var(--orange-primary)}
+div.card.card-blue{border-color:var(--blue-primary)}
+
+div.card-desc{
+  font-family: var(--ff-main);
+  color:var(--grey-500);
+}
+
+div.card-desc h3{
+  font-size:1.25rem;
+  font-weight:var(--fw-bold);
+  padding:0rem 1rem;
+}
+
+div.card-desc p{
+  font-size:0.75rem;
+  font-weight:var(--ff-main);
+  padding:0.5rem 1rem;
+  width:80%;
+}
+
+.card-image{
+  align-self:flex-end;
+  padding-right:1rem;
+  padding-bottom:1rem;
+}
+
+@media (min-width:425px){
+  :root {
+    font-size:15px;
+  }
+  
+  div.subtitle > h2 {width:60%;}
+
+  div.cards{
+    flex-direction: row;
+  }
+
+  div.card {
+    margin:1rem;
+  }
+
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <div class="title">
+        <h1 class="light">Reliable, efficient delivery</h1>
+        <h1 class="bold">Powered by Technology</h1>
+      </div>
+      <div class="subtitle">
+      <h2>
+        Our Artificial Intelligence powered tools use millions of project data points 
+        to ensure that your project is successful
+      </h2>
+    </div>
+    </div>
+    <div class="cards">
+      <div class="card card-cyan">
+        <div class="card-desc">
+          <h3>Supervisor</h3>
+          <p>Monitors activity to identify project roadblocks</p>
+        </div>
+        <img class="card-image" src="/images/icon-supervisor.svg" alt="">
+      </div>
+      <div class="card-section-2">
+        <div class="card card-red">
+          <div class="card-desc">
+            <h3>Team Builder</h3>
+            <p>Scans our talent network to create the optimal team for your project</p>
+          </div>
+          <img class="card-image" src="/images/icon-team-builder.svg" alt="">
+        </div>
+        <div class="card card-orange">
+          <div class="card-desc">
+            <h3>Karma</h3>
+            <p>Regularly evaluates our talent to ensure quality</p>
+          </div>
+          <img class="card-image" src="/images/icon-karma.svg" alt="">
+        </div>
+      </div>
+      <div class="card card-blue">
+        <div class="card-desc">
+          <h3>Calculator</h3>
+          <p>Uses data from past projects to provide better delivery estimates</p>
+        </div>
+        <img class="card-image" src="/images/icon-calculator.svg" alt="">
+      </div>
+    </div>
+  </div>
+    
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
