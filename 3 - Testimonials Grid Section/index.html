@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500;600&display=swap');
+    
+    * {
+      margin:0;
+      padding:0;
+      text-decoration: none;
+      font-family:var(--ff-primary);
+      text-wrap-mode: wrap;
+    }
+
+    :root {
+      font-size:13px;
+
+      --purple-50:hsl(260, 100%, 95%);
+      --purple-300:hsl(264, 82%, 80%);
+      --purple-500:hsl(263, 55%, 52%);
+      --white:hsl(0, 0%, 100%);
+      --grey-100:hsl(214, 17%, 92%);
+      --grey-200:hsl(0, 0%, 81%);
+      --grey-400:hsl(224, 10%, 45%);
+      --grey-500:hsl(217, 19%, 35%);
+      --dark-blue:hsl(219, 29%, 14%);
+      --black:hsl(0, 0%, 7%);
+
+      --fw-300:300;
+      --fw-500:500;
+      --fw-600:600;
+
+      --ff-primary:"Barlow Semi Condensed", sans-serif;
+
+      --article-lrg-h:20rem;
+      --article-lrg-w:45rem;
+      --article-sml-h:1rem;
+      --article-sml-w:1rem;
+      --article-lng-h:1rem;
+      --article-lng-w:1rem;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      background-color: var(--white);
+      height:100vh;
+      width:100%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    div.container {
+      display:grid;
+      grid-template-rows: repeat(2, 22rem);
+      grid-template-columns: repeat(4, 20rem);
+      gap:2rem;
+    }
+
+    article {
+      display:flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-direction: column;
+      border-radius:0.5rem;
+      padding:2rem;
+      box-shadow: 1rem 3rem 3rem hsla(0, 0%, 0%, 0.2);
+    }
+    
+    article.art-lrg.first{
+      grid-area:1 / 1 / 2 / 3;
+      background-color:var(--purple-500);
+      background-image: url(/images/bg-pattern-quotation.svg);
+      background-repeat: no-repeat;
+      background-position:29rem 0rem;
+    }
+
+    article.art-lrg > div.profile {width:30%;}
+
+    article.art-lrg.first > div.profile {color:var(--white);}
+
+    article.art-lrg.first > header > h2{color:var(--white);
+}
+
+    article.art-sml.second{
+      grid-area:1 / 3 / 1 / 4;
+      background-color:var(--grey-500);
+    }
+
+    article.art-sml.second > div.profile {
+      color:var(--white);
+    }
+
+    article.art-sml.second header h2 {
+      color:var(--white);
+    }
+
+    article.art-sml.third{
+      grid-area:2 / 1 / 3 / 2;
+      background-color:var(--white);
+    }
+
+    article.art-sml.third div.prof-desc,
+    article.art-sml.third header h2,
+    article.art-sml.third div.desc p{
+      color:var(--grey-500);
+    }
+
+    article.art-lrg.fourth{
+      grid-area:2 / 2 / 3 / 4;
+      background-color:var(--dark-blue);
+    }
+
+    article.art-lrg.fourth div.prof-desc,
+    article.art-lrg.fourth header h2,
+    article.art-lrg.fourth div.desc p {
+      color:var(--grey-200);
+    }
+
+    article.art-lng.fifth{
+      grid-area:1 / 4 / 3 / 5;
+      background-color:var(--white);
+    }
+
+    article.art-lng.fifth div.prof-desc,
+    article.art-lng.fifth header h2,
+    article.art-lng.fifth div.desc p {
+      color:var(--grey-500);
+    }
+
+    
+
+    article > header {
+      font-weight:var(--fw-600);
+      font-size:1.05rem;
+    }
+
+    article > div.profile {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    article.art-sml > div.profile {
+      width:80%;
+    }
+
+    article.art-lng > div.profile{
+      width:70%;
+    }
+
+    div.profile > div.prof-img > img {
+      border:0.2rem solid var(--purple-300);
+      border-radius:500%;
+      height:3rem;
+      width:3rem;
+    }
+
+    div.desc>p{
+      font-size:1rem;
+      color:var(--white);
+      font-weight:var(--fw-500);
+      line-height:1.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="art-lrg first">
+        <div class="profile">
+          <div class="prof-img">
+            <img src="/images/image-daniel.jpg" alt="">
+          </div>
+          <div class="prof-info">
+            <h3>Daniel Clifford</h3>
+            <h4>Verified Graduate</h4>
+          </div>
+        </div>
+          <header>
+            <h2>
+              I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+              in the company I joined. I honestly feel I got every penny’s worth.
+            </h2>
+          </header>
+          <div class="desc">
+              <p>
+                “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a 
+                transition and have heard some people who had an amazing experience here. I signed up 
+                for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
+                The next 12 weeks was the best - and most grueling - time of my life. Since completing 
+                the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+              </p>
+            </div>
+      </article>
+
+    <article class="art-sml second">
+      <div class="profile">
+        <div class="prof-img">
+          <img src="/images/image-jonathan.jpg" alt="">
+        </div>
+        <div class="prof-desc">
+          <h3>Jonathan Walters</h3>
+          <h4>Verified Graduate</h4>
+        </div>
+      </div>
+      <header>
+        <h2>
+          The team was very supportive and kept me motivated
+        </h2>
+      </header>
+      <div class="desc">
+          <p>
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
+            for a big company. This was one of the best investments I’ve made in myself. ”
+          </p>
+        </div>
+    </article>
+
+    <article class="art-sml third">
+      <div class="profile">
+        <div class="prof-img">
+          <img src="/images/image-jeanette.jpg" alt="">
+        </div>
+        <div class="prof-desc">
+          <h3>Jeanette Harmon</h3>
+          <h4>Verified Graduate</h4>
+        </div>
+      </div>
+        <header>
+          <h2>
+            An overall wonderful and rewarding experience
+          </h2>
+        </header>
+        <div class="desc">
+          <p>
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
+            while doing something I love. ”
+          </p>
+        </div>
+    </article>
+    <article class="art-lrg fourth">
+      <div class="profile">
+        <div class="prof-img">
+          <img src="/images/image-patrick.jpg" alt="">
+        </div>
+        <div class="prof-desc">
+          <h3>Patrick Abrams</h3>
+          <h4>Verified Graduate</h4>
+        </div>
+      </div>
+        <header>
+          <h2>
+            Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
+            learning from their experiences was easy.
+          </h2>
+  </header>
+  <div class="desc">
+    <p>
+      “ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
+      gave me the confidence necessary to be able to go out in the world and present myself as a capable 
+      junior developer. The standard is above the rest. You will get the personal attention you need from 
+      an incredible community of smart and amazing people. ”
+  </p>
+  </div>
+    </article>
+
+    <article class="art-lng fifth">
+      <div class="profile">
+        <div class="prof-img">
+          <img src="/images/image-kira.jpg" alt="">
+        </div>
+        <div class="prof-desc">
+          <h3>Kira Whittle</h3>
+          <h4>Verified Graduate</h4>
+        </div>
+      </div>
+        <header>
+          <h2>
+            Such a life-changing experience. Highly recommended!
+          </h2>
+        </header>
+        <div class="desc">
+          <p>
+            “ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from 
+            professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
+            student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
+            did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
+            project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
+            could ever have. In fact, I’ve often referred to it during interviews as an example of my developent 
+            experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 100% reccomend! "
+          </p>
+      </div>
+    </article>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
